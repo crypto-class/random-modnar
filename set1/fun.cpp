@@ -1,6 +1,9 @@
 
 #include "fun.h"
 
+/*
+字符串转N进制
+*/
 string char2Base(char cc, int base, int n)
 {
 	int c = ((cc - '\0') % 256 + 256) % 256;
@@ -17,6 +20,9 @@ string char2Base(char cc, int base, int n)
 	s = string(s.rbegin(), s.rend());
 	return s;
 }
+/*
+十六进制转字符串
+*/
 string hex2str(string s)
 {
 	string ret;
@@ -30,7 +36,9 @@ string hex2str(string s)
 	}
 	return ret;
 }
-
+/*
+字符串转十六进制
+*/
 string str2hex(string s)
 {
 	string hex;hex.clear();
@@ -41,7 +49,9 @@ string str2hex(string s)
 	}
 	return hex;
 }
-
+/*
+A和B异或
+*/
 string AXORB(string a, string b)
 {
 	int len = min(a.length(), b.length());
@@ -50,7 +60,9 @@ string AXORB(string a, string b)
 		s[i] = a[i] ^ b[i];
 	return s;
 }
-
+/*
+A和短语B异或，将A分成blcoksize = B.size
+*/
 string AXORWord(string a, string word)
 {
 	int len = a.length();
@@ -69,6 +81,10 @@ string AXORWord(string a, string word)
 //}
 
 /**********kmp**********/
+/*
+kmp字符串匹配算法
+手写的会快一点~\(≧▽≦)/~
+*/
 void kmp_pre(string x, int m, int nxt[])
 {
 	int i, j;
@@ -101,7 +117,9 @@ int kmp_count(string pa, int m, string s, int n)
 	}
 	return ans;
 }
-
+/*
+char类型二进制里1的个数
+*/
 int CountBitOne(char a)
 {
 	int cnt = 0;
@@ -112,7 +130,9 @@ int CountBitOne(char a)
 	}
 	return cnt;
 }
-
+/*
+海明距离
+*/
 int HammingDist(string a, string b)
 {
 	string di = AXORB(a, b);
@@ -124,7 +144,9 @@ int HammingDist(string a, string b)
 	}
 	return dis;
 }
-
+/*
+统计当前串的字母频率
+*/
 double CountFrequencySTD(string a)
 {
 	int cnt[26] = {};
@@ -267,7 +289,9 @@ string CBC_AES_ENC(string plain, byte aes_key[], byte* iv)
 	StringSource(plain, true, new StreamTransformationFilter(Encryptor, new StringSink(cipher)));
 	return cipher;
 }
-
+/*
+将字符串分组，组大小为blcoksize
+*/
 vector<string> chunk(string s, int blocksize)
 {
 	int len = s.length();
@@ -279,7 +303,9 @@ vector<string> chunk(string s, int blocksize)
 	}
 	return ret;
 }
-
+/*
+快速幂
+*/
 Integer powMod(Integer a, Integer n, Integer mod)
 {
 	Integer ans = 1;
@@ -394,7 +420,9 @@ string SHAOne(string message)
 	StringSource s(message, true, new HashFilter(hash, new HexEncoder(new StringSink(digest))));
 	return digest;
 }
-
+/*
+扩展欧几里得算法
+*/
 Integer exgcd(Integer a, Integer b, Integer &x, Integer &y)
 {
 	if (b == 0)

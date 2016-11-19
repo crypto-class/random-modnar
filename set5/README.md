@@ -82,3 +82,43 @@ you can know S = (k*N * v**u)**b %N = 0
 the same as A = 0
 ```
 
+## challenge38 - 通过脱机字典攻击 SRP
+
+字典攻击
+
+跑字典就好了
+
+## challenge39 - 实现 RSA
+
+过程如下
+
+```
+生成俩素数 p,q
+
+令N = p*q
+
+phi(N) = (p-1)(q-1)
+
+public key = e, gcd(e,phi) = 1
+
+private key = d, e*d = 1 mod N
+
+cipher = plain^e
+
+plain = cipher^d
+
+```
+
+## challenge40 实现当 E 等于 3 时的 RSA 广播攻击
+
+假如同一的明文用不同的私钥对RSA多次进行加密
+
+那么用 中国剩余定理 很容易进行破解
+
+当然，，前提是e是一样的情况下。。。
+
+```
+M^e = C1 mod N1
+M^e = C2 mod N2
+M^e = C3 mod N3
+```

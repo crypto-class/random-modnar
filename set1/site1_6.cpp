@@ -26,6 +26,11 @@ struct keylen
 };
 vector<keylen>K;
 
+/*
+猜测密钥长度，
+相同字母加密后隔密钥长度的倍数距离是相等的
+看碰撞数
+*/
 int Kasiski(string s,int block_size)
 {
 	int dis = 0;
@@ -38,6 +43,9 @@ int Kasiski(string s,int block_size)
 }
 
 double std_qsum = 0.065;
+/*
+选出最高的碰撞数
+*/
 bool cmp(keylen a, keylen b)
 {
 	return a.dis > b.dis;
@@ -52,7 +60,9 @@ string Base64Dec(string strSrc)
 	return strOut;
 }
 
-
+/*
+候选字母
+*/
 struct  candChar
 {
 	char c;
@@ -62,7 +72,9 @@ struct  candChar
 		return det < b.det;
 	}
 };
-
+/*
+查找候选字母，统计频率，看和标准频率最接近的是哪个字母
+*/
 string FindSingleKey(int step, string s, int keylen)
 {
 	cout << "follow is pos = " << step;

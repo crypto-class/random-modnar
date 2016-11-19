@@ -18,6 +18,9 @@ int main()
 
 	int len = cipher.length();
 	string pa = "the";
+	/*
+	遍历可能字母看看异或后是否有频率词the出现
+	*/
 	for (int i = 0;i < 255; ++i)
 	{
 		string  key;

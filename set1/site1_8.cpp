@@ -9,7 +9,10 @@ char testwait;
 
 FILE *fi = freopen("data.in", "r", stdin);
 FILE *fo = freopen("site1_8.out", "w", stdout);
-
+/*
+ECB模式容易导致不同组可能会有相同的密文
+通过这一特性统计即可
+*/
 int boom(string a, string b)
 {
 	for (int i = 0;i < (int)a.length() - 3;++i)

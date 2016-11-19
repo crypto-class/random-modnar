@@ -58,16 +58,25 @@ int main()
 
    string pa = "the";
    int tag = -1;
+   /*
+   遍历可能的ascii
+   */
    for(int i=0;i<255;i++)
    {
 //        printf("\n*****\n");
 //        cout<<alpha[i]<<endl;
 //        puts("*******");
        int flag = 0;
+       /*
+       遍历所有行
+       */
        for(int j=0;j<cnt;j++)
        {
            string ne = AXORB(cipher[j],alpha[i]);
            string ::iterator it, it2;
+           /*
+            担心有换行符的存在可以将换行符去掉链接
+           */
            for(it = ne.begin();it!=ne.end();)
            {
                it2 = it;
@@ -80,6 +89,9 @@ int main()
                    it++;
                }
            }
+           /*
+            看看是否有所有字符都是有效字符
+           */
            if(check(ne))
            {
                flag =1;

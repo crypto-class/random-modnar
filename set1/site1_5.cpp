@@ -11,6 +11,12 @@
 using namespace CryptoPP;
 using namespace std;
 #define STOP system("pause")
+/*
+异或加密
+明文是 Burning 'em, if you ain't quick and nimble I go crazy when I hear a cymbal
+密码是 ICE
+
+*/
 int main()
 {
 	string plain1 = "Burning 'em, if you ain't quick and nimble";
@@ -29,6 +35,7 @@ int main()
 
 	cipher3 = AXORWord(plain3, key);
 	cipher3 = str2hex(cipher3);
+	cout << "final cipher = " << endl;
 	cout << cipher3 << endl;
 
 

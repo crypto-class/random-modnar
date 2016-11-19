@@ -62,9 +62,9 @@ follow is pos = 14char maybe is
 follow is pos = 15char maybe is 
 B 
 follow is pos = 16char maybe is 
-r q s w p u v z { | m g 
+m q w p g { | z v u s r 
 follow is pos = 17char maybe is 
-i ) 4 7 2 5 ! " ( * + , - /   # . & ' 0 3 < = ? 9 % 8 ; > 
+8 # 3 ? " 4 9 . 0 / + 5 < > 2 ) * % - 7 ! ; ' i ( &   = , 
 follow is pos = 18char maybe is 
 n 
 follow is pos = 19char maybe is 
@@ -76,9 +76,9 @@ t
 follow is pos = 22char maybe is 
 h 
 follow is pos = 23char maybe is 
-a e b g c ` f d ~ z } i k m p 
+z ` } k f p ~ b g d i c a m e 
 follow is pos = 24char maybe is 
-  s 
+s   
 follow is pos = 25char maybe is 
 n 
 follow is pos = 26char maybe is 

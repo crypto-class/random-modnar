@@ -29,11 +29,14 @@ using namespace std;
 #define mp make_pair
 #define LL long long
 #define BYTELEN 8
+const int MAXN = 1000000;
 const int INF = 0x3f3f3f3f;
 const double SIG_STD_FRE_SUM = 0.065;
 const double alphabetFre[30] = { 0.08167,0.01492,0.02782,0.04253,0.12705,0.02228,0.02015,0.06094,0.06996,0.00153,0.00772,0.04025,0.02406,0.06749,0.07507,0.01929,0.0009,0.05987,0.06327,0.09056,0.02758,0.00978,0.02360,0.0015,0.01974,0.00074 };
 
-
+//int Prime[MAXN];
+//bool IsNoPrime[MAXN] = { 1,1 };
+//int prime_num = 0;
 
 string char2Base(char cc, int base, int n);
 string hex2str(string s);
@@ -61,4 +64,6 @@ void Inter2Byte(Integer a, byte b[], int n);
 string Inter2Str(Integer a);
 Integer Str2Inter(string a, int base);
 double Inte2Doub(Integer a);
+string SHAOne(string message);
+Integer exgcd(Integer a, Integer b, Integer &x, Integer &y);
 

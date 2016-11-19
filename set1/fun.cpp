@@ -385,3 +385,29 @@ double Inte2Doub(Integer a)
 	}
 	return ans;
 }
+
+string SHAOne(string message)
+{
+	SHA1 hash;
+	string digest;
+
+	StringSource s(message, true, new HashFilter(hash, new HexEncoder(new StringSink(digest))));
+	return digest;
+}
+
+Integer exgcd(Integer a, Integer b, Integer &x, Integer &y)
+{
+	if (b == 0)
+	{
+		x = 1;
+		y = 0;
+		return a;
+	}
+	else {
+		Integer g = exgcd(b, a%b, x, y);
+		Integer t = x;
+		x = y;
+		y = t - a / b*x;
+		return g;
+	}
+}

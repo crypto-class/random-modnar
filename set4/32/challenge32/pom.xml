@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.seceve.cryptopals</groupId>
+  <artifactId>challenge32</artifactId>
+  <version>0.9-beta</version>
+  <packaging>jar</packaging>
+
+  <name>challenge32</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>io.undertow</groupId>
+    	<artifactId>undertow-core</artifactId>
+    	<version>1.4.4.Final</version>
+    </dependency>
+  </dependencies>
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-shade-plugin</artifactId>
+  			<version>2.3</version>
+  		</plugin>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-jar-plugin</artifactId>
+  			<configuration>
+				<archive>
+					<manifest>
+						<mainClass>com.seceve.cryptopals.challenge32.App</mainClass>
+					</manifest>
+				</archive>
+			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
+</project>
+
